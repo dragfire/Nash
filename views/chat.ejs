@@ -12,14 +12,17 @@
 <div class="container">
     <div class="card-panel teal accent-3">
         <h6 class="center-align black-text darken-4 shades-text">NASH</h6>
-        <h6 class="center-align black-text darken-4 shades-text">Welcome <%= username %></h6>
+        <% console.log(username) %>
+        <h6 class="center-align black-text darken-4 shades-text">Welcome <span id="username"><%- username %></span></h6>
     </div>
     <div class="input-field col s12">
-        <select>
-            <option value="" disabled selected>Choose a room</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <select id="rooms">
+            <option value="general" selected>General</option>
+            <option value="angular">Angular</option>
+            <option value="socket.io">Socket.io</option>
+            <option value="express">Express</option>
+            <option value="node">Node</option>
+            <option value="mongo">Mongo</option>
         </select>
         <label>Select Room</label>
     </div>
@@ -27,12 +30,24 @@
         <div class="col s12">
             <div id="content-wrapper">
                 <div class="row col s12" id="content">
-                    <div id="msg" style="border: 1px solid crimson">
-                        <span class="pink-text accent-4 uname">Red John</span> says:
-                        <h6 class="content">Hello How are you?</h6>
-                    </div>
+                    <!--<div id="msg" style="border: 1px solid crimson">-->
+                        <!--<span class="pink-text accent-4 uname">Red John</span> says:-->
+                        <!--<h6 class="content">Hello How are you?</h6>-->
+                    <!--</div>-->
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="icon_prefix2" class="materialize-textarea msg-content"></textarea>
+                <label for="icon_prefix2">Message</label>
+            </div>
+            <button class="input-field btn waves-effect waves-light btn-large pink accent-3 send-btn">Send
+                <i class="material-icons right">send</i>
+            </button>
         </div>
     </div>
 </div>
