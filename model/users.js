@@ -8,4 +8,4 @@ var schema = new mongoose.Schema({
 });
 
 
-module.exports = Users = mongoose.Model('Users', schema);
+module.exports = Users = mongoose.model('Users', schema);
