@@ -1,6 +1,7 @@
 {
   "name": "Nash",
   "version": "0.0.1",
+  "description": "Chat App using MEA(/R)N stack",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
