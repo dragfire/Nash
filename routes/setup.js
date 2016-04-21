@@ -39,4 +39,7 @@ router.post('/', function (req, res) {
             debug('SAVED', chat);
         });
     });
+    res.send("SAVED");
 });
+
+module.exports = router;
