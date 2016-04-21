@@ -2,9 +2,9 @@ $(function () {
     var socket = io();
     var oldRoom,  defaultRoom = 'general';
     var $rooms = $('#rooms');
-    var $msgBoard = $('div#content');
     var $username = $('#username');
     var $selectedRoom = $rooms.val();
+    var $msgBoard = $('div#content');
 
     console.log(socket);
 
@@ -16,7 +16,11 @@ $(function () {
     getMsgs(defaultRoom);
 
     socket.on('user joined', function (data) {
-        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: '+$username+'. Welcome</h6>');
+        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: '+data.username+'. Welcome</h6>');
+    });
+
+    socket.on('user left', function (data) {
+        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just left: '+data.username+'. Bye Bye!!!</h6>');
     });
 
     socket.on('setup', function (data) {
@@ -27,6 +31,7 @@ $(function () {
 
     $rooms.change(function () {
         $selectedRoom = $rooms.val();
+        console.log('username: ',$username.text());
         socket.emit('switch room', {
             oldRoom: oldRoom,
             newRoom: $selectedRoom,
@@ -37,9 +42,23 @@ $(function () {
         getMsgs($selectedRoom);
     });
 
+    socket.on('message created', function (msg) {
+        $msgBoard.append("<div id='msg' style='border: 1px solid crimson'> <span class='pink-text accent-4 uname'>"+msg.username+"</span> says: <h6 class='content'>"+msg.content+"</h6> </div>");
+    });
+
+    $('.send-btn').click(function () {
+        console.log("Send button clicked");
+        socket.emit('new message', {
+            message: $('.msg-content').val(),
+            username: $username.text(),
+            room: oldRoom
+        });
+    });
+
 });
 
 function getMsgs(selectedRoom) {
+    var $msgBoard = $('div#content');
     $.ajax({
         url: '/message',
         dataType: 'json',

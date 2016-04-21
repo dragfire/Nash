@@ -28,6 +28,7 @@ var sio = function (io) {
         });
 
         socket.on('new message', function (data) {
+            debug("New Message", data);
             var msg = new schemas.Chat({
                 username: data.username,
                 content: data.message,
@@ -36,6 +37,7 @@ var sio = function (io) {
             });
 
             msg.save(function (err, msg) {
+                debug("Saved",msg);
                 io.in(msg.room).emit('message created', msg);
             });
         });
