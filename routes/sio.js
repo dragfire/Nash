@@ -20,6 +20,7 @@ var sio = function (io) {
         });
 
         socket.on('switch room', function (data) {
+            debug('Switch Room', data);
             socket.leave(data.oldRoom);
             socket.join(data.newRoom);
             io.in(data.oldRoom).emit('user left', data);
