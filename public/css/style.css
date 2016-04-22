@@ -1,6 +1,7 @@
-*{
+* {
     font-family: 'Fresca', sans-serif;
 }
+
 html, body {
     height: 100% !important;
     margin: 0;
@@ -19,26 +20,27 @@ html, body {
     padding-top: 20px;
     height: 10%;
 }
-.card-panel{
-    padding: 10px!important;
+
+.card-panel {
+    padding: 10px !important;
 }
 
-div.wrapper > .row{
-    height: 100%!important;
-    margin: 0!important;
+div.wrapper > .row {
+    height: 100% !important;
+    margin: 0 !important;
 }
 
-div.wrapper{
-    height: 100%!important;
-    margin: 0!important;
+div.wrapper {
+    height: 100% !important;
+    margin: 0 !important;
     /*overflow: hidden;*/
 }
 
 /*.msg-content{*/
-    /*height: 10px !important;*/
+/*height: 10px !important;*/
 /*}*/
 
-@media screen and (max-width: 599px){
+@media screen and (max-width: 599px) {
     html, body {
         height: auto !important;
     }
@@ -53,14 +55,14 @@ div.wrapper{
         margin-top: 10px;
     }
 
-    div.wrapper > .row{
-        height: auto!important;
-        margin: 0!important;
+    div.wrapper > .row {
+        height: auto !important;
+        margin: 0 !important;
     }
 
-    div.wrapper{
-        height: auto!important;
-        margin: 0!important;
+    div.wrapper {
+        height: auto !important;
+        margin: 0 !important;
         /*overflow: hidden;*/
     }
 }
