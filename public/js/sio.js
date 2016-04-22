@@ -57,7 +57,7 @@ $(function () {
         });
     });
 
-    $msgContent.live('keydown', function () {
+    $msgContent.keydown(function () {
         console.log('user typing');
         socket.emit('user typing', {
             username: $username.text(),
