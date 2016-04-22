@@ -28,7 +28,7 @@ $(function () {
     socket.on('setup', function (data) {
         var rooms = data.rooms;
         oldRoom = defaultRoom;
-        console.log(rooms);
+        //console.log(rooms);
     });
 
     $rooms.change(function () {
@@ -49,7 +49,7 @@ $(function () {
     });
 
     $('.send-btn').click(function () {
-        console.log("Send button clicked");
+        //console.log("Send button clicked");
         socket.emit('new message', {
             message: $('.msg-content').val(),
             username: $username.text(),
@@ -58,7 +58,7 @@ $(function () {
     });
 
     $msgContent.keydown(function () {
-        console.log('user typing');
+        //console.log('user typing');
         socket.emit('user typing', {
             username: $username.text(),
             room: $selectedRoom
@@ -74,10 +74,10 @@ $(function () {
     });
 
     socket.on('typing', function (data) {
-        console.log(data.username, $username.text(), data.username!=$username.text());
+        //console.log(data.username, $username.text(), data.username!=$username.text());
 
         if($username.text() != data.username){
-            console.log('Updating typing...');
+            //console.log('Updating typing...');
             $nowTyping.show();
 
             $nowTyping.find('span').css({color: 'blue'});
@@ -86,7 +86,7 @@ $(function () {
     });
 
     socket.on('no typing', function (data) {
-        console.log('no typing');
+        //console.log('no typing');
         $nowTyping.hide();
     });
 
@@ -99,7 +99,7 @@ function getMsgs(selectedRoom) {
         dataType: 'json',
         data: {room: selectedRoom},
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             data.forEach(function (msg) {
                 $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
             });
