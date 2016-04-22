@@ -82,7 +82,7 @@ $(function () {
     socket.on('typing', function (data) {
         //console.log(data.username, $username.text(), data.username!=$username.text());
 
-        if($username.text() != data.username){
+        if ($username.text() != data.username) {
             //console.log('Updating typing...');
             $nowTyping.show();
 
@@ -110,7 +110,7 @@ $(function () {
     socket.on('username changed', function (data) {
         // console.log('username changed', data);
         $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text"> <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.oldUsername + '</span> changed Username to: <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.username + '</span> </h6>');
-        if($username.text() == data.oldUsername)
+        if ($username.text() == data.oldUsername)
             $username.text(data.username);
         mb.scrollTop = mb.scrollHeight;
     });
