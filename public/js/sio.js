@@ -54,11 +54,11 @@ $(function () {
     $('.send-btn').click(function () {
         //console.log("Send button clicked");
         socket.emit('new message', {
-            message: $('.msg-content').val(),
+            message: $msgContent.val(),
             username: $username.text(),
             room: oldRoom
         });
-        $('.send-btn').empty(); // I know it's not optimized # var $sendBtn = $('.send-btn') // this is better
+        $msgContent.val('');
     });
 
     $msgContent.keydown(function () {
