@@ -11,7 +11,9 @@ Working App: https://dnash.herokuapp.com
 
 **TODO:** Write API for Third Party Integration.
 <br/>
-![Nash Chat Interface](https://www.dropbox.com/s/d01gdqn9rs93usl/nash_chat.png?dl=1)
+![Nash Chat Interface](https://www.dropbox.com/s/yrl51ff9z64fqzm/star_wars_1.png?dl=1)
+<br/>
+![Nash Chat Interface](https://www.dropbox.com/s/5i1cdyu7ssyyqe7/star_wars_2.png?dl=1)
 <br/>
 <br/>
 ![Nash Main Interface](https://www.dropbox.com/s/ydbbphzvooovnkh/nash_main.png?dl=1)
