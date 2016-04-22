@@ -101,7 +101,7 @@ function getMsgs(selectedRoom) {
         success: function (data) {
             console.log(data);
             data.forEach(function (msg) {
-                $msgBoard.html("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
+                $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
             });
         },
         error: function (xhr, status, err) {
