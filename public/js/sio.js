@@ -16,11 +16,11 @@ $(function () {
     getMsgs(defaultRoom);
 
     socket.on('user joined', function (data) {
-        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: '+data.username+'. Welcome</h6>');
+        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: <span class="light-green-text accent-4 big" style="font-weight: bold">'+data.username+'</span>. Welcome</h6>');
     });
 
     socket.on('user left', function (data) {
-        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just left: '+data.username+'. Bye Bye!!!</h6>');
+        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just left: <span class="light-green-text accent-4 big" style="font-weight: bold">'+data.username+'</span>. Bye Bye!!!</h6>');
     });
 
     socket.on('setup', function (data) {
@@ -43,7 +43,7 @@ $(function () {
     });
 
     socket.on('message created', function (msg) {
-        $msgBoard.append("<div id='msg' style='border: 1px solid crimson'> <span class='pink-text accent-4 uname'>"+msg.username+"</span> says: <h6 class='content'>"+msg.content+"</h6> </div>");
+        $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>"+msg.username+"</span> says: <h6 class='text' style='margin-left: 20px!important;'>"+msg.content+"</h6> </div>");
     });
 
     $('.send-btn').click(function () {
@@ -66,7 +66,7 @@ function getMsgs(selectedRoom) {
         success: function (data) {
             console.log(data);
             data.forEach(function (msg) {
-                $msgBoard.html("<div id='msg' style='border: 1px solid crimson'> <span class='pink-text accent-4 uname'>"+msg.username+"</span> says: <h6 class='content'>"+msg.content+"</h6> </div>");
+                $msgBoard.html("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>"+msg.username+"</span> says: <h6 class='text' style='margin-left: 20px!important;'>"+msg.content+"</h6> </div>");
             });
         },
         error: function (xhr, status, err) {
