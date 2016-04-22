@@ -10,6 +10,7 @@ It provides an API where developers can implement chat features using **NASH CHA
 Working App: https://dnash.herokuapp.com
 
 **TODO:** Write API for Third Party Integration.
+<br/>
 **TODO:** Change Username while in Chat Room.
 
 <br/>
