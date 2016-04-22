@@ -57,7 +57,8 @@ $(function () {
         });
     });
 
-    $msgContent.keypress(function () {
+    $msgContent.live('keydown', function () {
+        console.log('user typing');
         socket.emit('user typing', {
             username: $username.text(),
             room: $selectedRoom
