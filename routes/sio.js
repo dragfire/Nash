@@ -15,6 +15,8 @@ var sio = function (io) {
         });
 
         socket.on('new user', function (data) {
+            socket.name = data.username;
+            socket.room = data.room;
             data.room = defaultRoom;
             socket.join(defaultRoom);
             io.in(defaultRoom).emit('user joined', data);
@@ -23,6 +25,7 @@ var sio = function (io) {
         socket.on('switch room', function (data) {
             //debug('Switch Room', data);
             socket.leave(data.oldRoom);
+            socket.room = data.newRoom;
             socket.join(data.newRoom);
             io.in(data.oldRoom).emit('user left', data);
             io.in(data.newRoom).emit('user joined', data);
@@ -49,6 +52,11 @@ var sio = function (io) {
 
         socket.on('stopped typing', function (data) {
             io.in(data.room).emit('no typing', data);
+        });
+
+        socket.on('disconnect', function () {
+            debug(socket, socket.name, socket.room);
+            io.in(socket.room).emit('user left', {username: socket.name, room: socket.room});
         });
     });
 

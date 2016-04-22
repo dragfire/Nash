@@ -13,7 +13,7 @@ $(function () {
     $nowTyping.hide();
     console.log(socket);
     socket.emit('new user', {
-        room: '',
+        room: defaultRoom,
         username: $username.text()
     });
 
@@ -21,10 +21,12 @@ $(function () {
 
     socket.on('user joined', function (data) {
         $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.username + '</span>. Welcome</h6>');
+        mb.scrollTop = mb.scrollHeight;
     });
 
     socket.on('user left', function (data) {
         $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just left: <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.username + '</span>. Bye Bye!!!</h6>');
+        mb.scrollTop = mb.scrollHeight;
     });
 
     socket.on('setup', function (data) {
@@ -99,7 +101,7 @@ $(function () {
 function getMsgs(selectedRoom) {
     var $msgBoard = $('div#content');
     var mb = document.querySelector('.msg-board');
-    mb.scrollTop = mb.scrollHeight;
+
     $.ajax({
         url: '/message',
         dataType: 'json',
@@ -114,4 +116,5 @@ function getMsgs(selectedRoom) {
             console.log(err.toString());
         }
     });
+    mb.scrollTop = mb.scrollHeight;
 }
