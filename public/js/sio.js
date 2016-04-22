@@ -1,4 +1,5 @@
 $(function () {
+
     var socket = io();
     var oldRoom, defaultRoom = 'general';
     var $rooms = $('#rooms');
@@ -8,6 +9,7 @@ $(function () {
     var $msgContent = $('.msg-content');
     var $nowTyping = $('#typing');
 
+    $nowTyping.hide()
     console.log(socket);
 
     socket.emit('new user', {
