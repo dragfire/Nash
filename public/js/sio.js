@@ -58,6 +58,7 @@ $(function () {
             username: $username.text(),
             room: oldRoom
         });
+        $('.send-btn').empty(); // I know it's not optimized # var $sendBtn = $('.send-btn') // this is better
     });
 
     $msgContent.keydown(function () {
