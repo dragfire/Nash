@@ -9,7 +9,7 @@ It provides an API where developers can implement chat features using **NASH CHA
 
 **TODO:** Write API for Third Party Integration.
 <br/>
-![Nash Chat Interface](https://www.dropbox.com/s/d01gdqn9rs93usl/nash_chat.png?dl=0)
+![Nash Chat Interface](https://www.dropbox.com/s/d01gdqn9rs93usl/nash_chat.png?dl=1)
 <br/>
 <br/>
-![Nash Main Interface](https://www.dropbox.com/s/ydbbphzvooovnkh/nash_main.png?dl=0)
+![Nash Main Interface](https://www.dropbox.com/s/ydbbphzvooovnkh/nash_main.png?dl=1)
