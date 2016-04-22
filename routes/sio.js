@@ -55,8 +55,15 @@ var sio = function (io) {
         });
 
         socket.on('disconnect', function () {
-            debug(socket, socket.name, socket.room);
+            //debug(socket, socket.name, socket.room);
             io.in(socket.room).emit('user left', {username: socket.name, room: socket.room});
+        });
+
+        socket.on('change username', function (data) {
+            debug('username change', data);
+            socket.name = data.username;
+            socket.room = data.room;
+            io.in(data.room).emit('username changed', data);
         });
     });
 

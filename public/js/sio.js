@@ -96,6 +96,25 @@ $(function () {
         $nowTyping.hide();
     });
 
+    $('.ch-uname-btn').click(function () {
+        var oldUsername = $username.text();
+        var newUsername = $('.ch-uname').val();
+        // console.log(oldUsername, newUsername);
+        socket.emit('change username', {
+            oldUsername: oldUsername,
+            username: newUsername,
+            room: oldRoom
+        });
+    });
+
+    socket.on('username changed', function (data) {
+        // console.log('username changed', data);
+        $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text"> <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.oldUsername + '</span> changed Username to: <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.username + '</span> </h6>');
+        if($username.text() == data.oldUsername)
+            $username.text(data.username);
+        mb.scrollTop = mb.scrollHeight;
+    });
+
 });
 
 function getMsgs(selectedRoom) {
