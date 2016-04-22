@@ -6,37 +6,11 @@
     <link rel='stylesheet' href='/libs/materialize/css/materialize.min.css'/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Fresca' rel='stylesheet' type='text/css'>
-    <style>
-        *{
-            font-family: 'Fresca', sans-serif;
-        }
-        html, body {
-            height: 100% !important;
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar, .chat-wrapper {
-            height: 100% !important;
-        }
-
-        .msg-board {
-            height: 80%;
-        }
-
-        .msg-input {
-            padding-top: 20px;
-            height: 10%;
-        }
-        .card-panel{
-            padding: 10px!important;
-        }
-    </style>
 </head>
 <body>
-<div class="col l12 s12" style="height: 100%!important;">
-    <div class="row" style="height: 100%!important;">
-        <div class="col l3 s12 sidebar grey lighten-4 z-depth-2">
+<div class="col l12 s12 m12 wrapper" >
+    <div class="row">
+        <div class="col l3 s12 m3 sidebar grey lighten-4 z-depth-2">
             <div class="section">
                 <h5 class="center-align green-text accent-3">NASH</h5>
             </div>
@@ -54,16 +28,16 @@
                 <label>Select Room</label>
             </div>
             <div class="row">
-                <div class="input-field col l7" style="margin-top: 50px!important;">
+                <div class="input-field col l7 m12 s8" >
                     <input id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">Change Username</label>
                 </div>
-                <div class="input-field col l5" style="margin-top: 50px!important;">
+                <div class="input-field col l5" >
                     <button class="input-field btn waves-effect waves-light pink accent-3">Change</button>
                 </div>
             </div>
         </div>
-        <div class="col l9 s12 chat-wrapper waves-red ">
+        <div class="col l9 s12 m9 chat-wrapper waves-red ">
             <div class="msg-board" style="overflow: auto;">
                 <div id="content-wrapper">
                     <div id="content">
@@ -79,59 +53,22 @@
                 <h6 class="green-text"><span class="pink-text accent-3"></span> is typing...</h6>
             </div>
             <div class="msg-input">
-                <div class="input-field col l10 s9">
+                <div class="input-field col l10 s9 m9">
                     <i class="material-icons prefix">mode_edit</i>
                     <textarea id="icon_prefix2" class="materialize-textarea msg-content"></textarea>
                     <label for="icon_prefix2">Message</label>
                 </div>
-                <button class="input-field btn waves-effect waves-light btn-large pink accent-3 send-btn">Send
-                    <i class="material-icons right">send</i>
-                </button>
+                <!--<button class="input-field btn waves-effect waves-light pink accent-3 send-btn">Send-->
+                    <!--<i class="material-icons right">send</i>-->
+                <!--</button>-->
+                <a class="btn-floating btn-large red send-btn waves-effect waves-light pink accent-3">
+                    <i class="large material-icons">done</i>Send
+                </a>
             </div>
 
         </div>
     </div>
 
-    <!--<div class="card-panel teal accent-3">-->
-    <!--<h6 class="center-align black-text darken-4 shades-text">NASH</h6>-->
-    <!--<% console.log(username) %>-->
-    <!--<h6 class="center-align black-text darken-4 shades-text">Welcome <span id="username"><%- username %></span></h6>-->
-    <!--</div>-->
-    <!--<div class="input-field col s12">-->
-    <!--<select id="rooms">-->
-    <!--<option value="general" selected>General</option>-->
-    <!--<option value="angular">Angular</option>-->
-    <!--<option value="socket.io">Socket.io</option>-->
-    <!--<option value="express">Express</option>-->
-    <!--<option value="node">Node</option>-->
-    <!--<option value="mongo">Mongo</option>-->
-    <!--</select>-->
-    <!--<label>Select Room</label>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-    <!--<div class="col s12">-->
-    <!--<div id="content-wrapper">-->
-    <!--<div class="row col s12" id="content">-->
-    <!--&lt;!&ndash;<div id="msg" style="border: 1px solid crimson">&ndash;&gt;-->
-    <!--&lt;!&ndash;<span class="pink-text accent-4 uname">Red John</span> says:&ndash;&gt;-->
-    <!--&lt;!&ndash;<h6 class="content">Hello How are you?</h6>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-    <!--<div class="row">-->
-    <!--<div class="input-field col s12">-->
-    <!--<i class="material-icons prefix">mode_edit</i>-->
-    <!--<textarea id="icon_prefix2" class="materialize-textarea msg-content"></textarea>-->
-    <!--<label for="icon_prefix2">Message</label>-->
-    <!--</div>-->
-    <!--<button class="input-field btn waves-effect waves-light btn-large pink accent-3 send-btn">Send-->
-    <!--<i class="material-icons right">send</i>-->
-    <!--</button>-->
-    <!--</div>-->
-    <!--</div>-->
 </div>
 
 <script src="/libs/jquery-2.1.0.min.js"></script>

@@ -8,10 +8,10 @@ $(function () {
     var $msgBoard = $('div#content');
     var $msgContent = $('.msg-content');
     var $nowTyping = $('#typing');
+    var mb = document.querySelector('.msg-board');
 
-    $nowTyping.hide()
+    $nowTyping.hide();
     console.log(socket);
-
     socket.emit('new user', {
         room: '',
         username: $username.text()
@@ -48,6 +48,7 @@ $(function () {
 
     socket.on('message created', function (msg) {
         $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
+        mb.scrollTop = mb.scrollHeight;
     });
 
     $('.send-btn').click(function () {
@@ -96,6 +97,8 @@ $(function () {
 
 function getMsgs(selectedRoom) {
     var $msgBoard = $('div#content');
+    var mb = document.querySelector('.msg-board');
+    mb.scrollTop = mb.scrollHeight;
     $.ajax({
         url: '/message',
         dataType: 'json',
