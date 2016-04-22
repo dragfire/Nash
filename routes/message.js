@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
     schemas.Chat.find({
         'room': req.query.room.toLowerCase()
     }).exec(function (err, msgs) {
-        debug('Message', msgs);
+        //debug('Message', msgs);
         res.json(msgs);
     });
 });

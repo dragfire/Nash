@@ -9,6 +9,7 @@ var sio = function (io) {
     var rooms = ["general", "angular", "socket.io", "express", "node", "mongo"];
     
     io.on('connection', function (socket) {
+        debug('new connection', socket.id, socket.rooms, socket.sockets);
         socket.emit('setup', {
             rooms: rooms
         });
@@ -20,7 +21,7 @@ var sio = function (io) {
         });
 
         socket.on('switch room', function (data) {
-            debug('Switch Room', data);
+            //debug('Switch Room', data);
             socket.leave(data.oldRoom);
             socket.join(data.newRoom);
             io.in(data.oldRoom).emit('user left', data);
@@ -37,9 +38,17 @@ var sio = function (io) {
             });
 
             msg.save(function (err, msg) {
-                debug("Saved",msg);
+                //debug("Saved",msg);
                 io.in(msg.room).emit('message created', msg);
             });
+        });
+
+        socket.on('user typing', function (data) {
+            io.in(data.room).emit('typing', data);
+        });
+
+        socket.on('stopped typing', function (data) {
+            io.in(data.room).emit('no typing', data);
         });
     });
 
