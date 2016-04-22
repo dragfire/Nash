@@ -66,9 +66,6 @@ var sio = function (io) {
             io.in(data.room).emit('username changed', data);
         });
     });
-
-
-    
 };
 
 module.exports = sio;
