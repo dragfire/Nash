@@ -4,20 +4,33 @@ $(function () {
     var oldRoom, defaultRoom = 'general';
     var $rooms = $('#rooms');
     var $username = $('#username');
-    var $selectedRoom = $rooms.val();
+    var $selectedRoom;
     var $msgBoard = $('div#content');
     var $msgContent = $('.msg-content');
     var $nowTyping = $('#typing');
     var mb = document.querySelector('.msg-board');
+    var $invite = $('#invite').val();
+    var $privacy = $('#privacy').val();
+    var $room = $('#room').val();
 
     $nowTyping.hide();
     console.log(socket);
+
+    if (!$privacy && !$invite) {
+        $selectedRoom = $rooms.val();
+    } else if ($privacy && $invite) {
+        $selectedRoom = $room;
+    }
+
     socket.emit('new user', {
-        room: defaultRoom,
+        room: $selectedRoom,
         username: $username.text()
     });
 
-    getMsgs(defaultRoom);
+    oldRoom = $selectedRoom;
+    console.log($selectedRoom);
+
+    getMsgs($selectedRoom);
 
     socket.on('user joined', function (data) {
         $msgBoard.append('<h6 class="center-align black-text darken-4 shades-text">Just joined: <span class="light-green-text accent-4 big" style="font-weight: bold">' + data.username + '</span>. Welcome</h6>');
@@ -31,7 +44,7 @@ $(function () {
 
     socket.on('setup', function (data) {
         var rooms = data.rooms;
-        oldRoom = defaultRoom;
+        oldRoom = $selectedRoom;
         //console.log(rooms);
     });
 
@@ -49,16 +62,19 @@ $(function () {
     });
 
     socket.on('message created', function (msg) {
+        console.log('message created', msg);
         $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
         mb.scrollTop = mb.scrollHeight;
     });
 
     $('.send-btn').click(function () {
         //console.log("Send button clicked");
+
+        console.log('send to', $room);
         socket.emit('new message', {
             message: $msgContent.val(),
             username: $username.text(),
-            room: oldRoom
+            room: $selectedRoom
         });
         $msgContent.val('');
     });
@@ -114,7 +130,6 @@ $(function () {
             $username.text(data.username);
         mb.scrollTop = mb.scrollHeight;
     });
-
 });
 
 function getMsgs(selectedRoom) {
