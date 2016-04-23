@@ -20,7 +20,7 @@
         <h6 class="center-align green-text darken-4" style="font-weight: bold; font-size: 25px;">NASH CHAT APP</h6>
     </div>
     <div class="row">
-        <form class="col s12 l12" action="/chat">
+        <form class="col s12 l12" action="/chat/<%=privacy%>/<%=room%>" onsubmit="if(this.username.value.length > 0){location.href = this.action +'?username='+ this.username.value+'&invite=yes';} return false;">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
@@ -35,19 +35,6 @@
         </form>
     </div>
 
-    <div class="col s12 m12 l12" style="margin-top: 50px">
-        <div class="row center-align">
-            <p class="teal-text lighten-2">If you want to chat with friends privately or create your own room, click the
-                below button.</p>
-            <a class="btn waves-effect waves-light btn-large pink accent-3" href="/room">Create Room
-                <i class="material-icons right">room</i>
-            </a>
-            <p style="margin-top: 50px">
-                <small class="red-text accent-2">Note: It's your choice whether you want chat history to be stored on the database or not.
-                </small>
-            </p>
-        </div>
-    </div>
 
 </div>
 

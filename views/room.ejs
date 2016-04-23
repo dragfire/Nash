@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link rel='stylesheet' href='/libs/materialize/css/materialize.min.css'/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            font-family: 'Jockey One', sans-serif;
+        }
+
+        div.input-field, button{
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container" style="margin-top: 100px">
+    <div class="col l12 s12 m12">
+        <div class="row">
+            <form action="/room" method="post">
+                <div class="input-field col s12 l12 m12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="username" type="text" class="validate" name="username">
+                    <label for="username">Enter username</label>
+                </div>
+                <div class="input-field col s12 l6 m6">
+                    <input id="room-name" type="text" class="validate" name="roomname">
+                    <label for="room-name">Enter Room Name</label>
+                </div>
+                <div class="input-field col s12 l6 m6">
+                    <select name="roomprivacy">
+                        <option value="" selected>Choose your option</option>
+                        <option value="private">Private</option>
+                        <option value="public">Public</option>
+                    </select>
+                    <label>Select Room Privacy</label>
+                </div>
+                <button class="btn waves-effect waves-light btn-large pink accent-3" type="submit">Create Room
+                    <i class="material-icons right">room</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/jquery-2.1.0.min.js"></script>
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script>
+    $(function () {
+        $('select').material_select();
+    });
+</script>
+</body>
+</html>

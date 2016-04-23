@@ -9,15 +9,20 @@
     <link href='https://fonts.googleapis.com/css?family=Fresca' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="col l12 s12 m12 wrapper" >
+<div class="col l12 s12 m12 wrapper">
     <div class="row">
         <div class="col l3 s12 m3 sidebar grey lighten-4 z-depth-2">
+            <input type="hidden" value="<%= invitation %>" id="invite"/>
+            <input type="hidden" value="<%= privacy %>" id="privacy"/>
+            <input type="hidden" value="<%= room %>" id="room"/>
             <div class="section">
                 <h5 class="center-align green-text accent-3">NASH</h5>
             </div>
             <div class="divider"></div>
-            <h5 class="center-align">Welcome <span id="username" class="pink-text accent-4"><%=username.toUpperCase()%></span></h5>
+            <h5 class="center-align">Welcome <span id="username"
+                                                   class="pink-text accent-4"><%= username.toUpperCase() %></span></h5>
             <div class="input-field col s12 " style="margin-top: 50px!important;">
+                <% if(!privacy && !invitation){ %>
                 <select id="rooms">
                     <option value="general" selected>General</option>
                     <option value="angular">Angular</option>
@@ -26,25 +31,40 @@
                     <option value="node">Node</option>
                     <option value="mongo">Mongo</option>
                 </select>
+                <% } else { %>
+                <select id="rooms">
+                    <option value="general" disabled selected><%= room.toUpperCase() %></option>
+                </select>
+                <% } %>
                 <label>Select Room</label>
             </div>
             <div class="row">
-                <div class="input-field col l7 m12 s8" >
+                <div class="input-field col l7 m12 s8">
                     <input id="icon_prefix" type="text" class="validate ch-uname">
                     <label for="icon_prefix">Change Username</label>
                 </div>
-                <div class="input-field col l5" >
+                <div class="input-field col l5">
                     <button class="input-field btn waves-effect waves-light pink accent-3 ch-uname-btn">Change</button>
                 </div>
             </div>
         </div>
         <div class="col l9 s12 m9 chat-wrapper waves-red ">
-            <div class="msg-board" style="overflow: auto;">
+            <% if(invitation && privacy){ %>
+                <div class="inv-board card-panel deep-orange lighten-5 center-align">
+                    <div class="input-field col l12 m12 s12">
+                        <input id="icon_prefix" type="text" class="validate inv-link" value="<%=url%>/chat/<%=privacy%>/<%=room%>?invite=yes">
+                        <label for="icon_prefix">Invite Link</label>
+                    </div>
+                    <p class="teal-text lighten-2" style="margin-bottom: 5px">Invite your friends by sharing this link.</p>
+                </div>
+            <% } %>
+
+            <div class="msg-board <% if(invitation && privacy){ %>inv-board<%} else{%>no-inv-board<%}%>" style="overflow: auto;">
                 <div id="content-wrapper">
                     <div id="content">
                         <!--<div id="msg" class="card-panel">-->
-                            <!--<span class="pink-text accent-4 uname" style="font-weight: bold">Red John</span> says:-->
-                            <!--<h6 class="text" style="margin-left: 20px!important;">Hello How are you?</h6>-->
+                        <!--<span class="pink-text accent-4 uname" style="font-weight: bold">Red John</span> says:-->
+                        <!--<h6 class="text" style="margin-left: 20px!important;">Hello How are you?</h6>-->
                         <!--</div>-->
                     </div>
                 </div>
@@ -60,7 +80,7 @@
                     <label for="icon_prefix2">Message</label>
                 </div>
                 <!--<button class="input-field btn waves-effect waves-light pink accent-3 send-btn">Send-->
-                    <!--<i class="material-icons right">send</i>-->
+                <!--<i class="material-icons right">send</i>-->
                 <!--</button>-->
                 <a class="btn-floating btn-large red send-btn waves-effect waves-light pink accent-3">
                     <i class="large material-icons">done</i>Send
