@@ -17,9 +17,8 @@ var sio = function (io) {
         socket.on('new user', function (data) {
             socket.name = data.username;
             socket.room = data.room;
-            data.room = defaultRoom;
-            socket.join(defaultRoom);
-            io.in(defaultRoom).emit('user joined', data);
+            socket.join(data.room);
+            io.in(data.room).emit('user joined', data);
         });
 
         socket.on('switch room', function (data) {
@@ -41,7 +40,8 @@ var sio = function (io) {
             });
 
             msg.save(function (err, msg) {
-                //debug("Saved",msg);
+                if(err) throw err;
+                debug("Saved",msg);
                 io.in(msg.room).emit('message created', msg);
             });
         });
@@ -65,6 +65,7 @@ var sio = function (io) {
             socket.room = data.room;
             io.in(data.room).emit('username changed', data);
         });
+
     });
 };
 
