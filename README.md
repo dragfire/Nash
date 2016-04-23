@@ -17,6 +17,9 @@ Working App: https://dnash.herokuapp.com
 ![Nash Chat Interface](https://www.dropbox.com/s/5i1cdyu7ssyyqe7/star_wars_2.png?dl=1)
 <br/>
 <br/>
-![Nash Main Interface](https://www.dropbox.com/s/ydbbphzvooovnkh/nash_main.png?dl=1)
+![Nash Main Interface](https://www.dropbox.com/s/lmhy6c0fldaj555/nash_main_int.png?dl=1)
+<br/>
+![Nash Main Interface](https://www.dropbox.com/s/p7z2vlshqqr296t/nash_create_room.png?dl=1)
+
 
 *Optimized for Mobile devices.*
