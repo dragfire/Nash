@@ -12,7 +12,15 @@ html, body {
     height: 100% !important;
 }
 
-.msg-board {
+.inv-board {
+    height: 15%;
+}
+
+.msg-board.inv-board {
+    height: 63%;
+}
+
+.msg-board.no-inv-board {
     height: 80%;
 }
 
