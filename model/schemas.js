@@ -4,6 +4,14 @@
 
 var mongoose = require('mongoose');
 
+var RoomSchema = new mongoose.Schema({
+    name: String,
+    privacy: String, // public or private room
+    created: Date
+});
+
+exports.Room = mongoose.model('Room', RoomSchema);
+
 var UserSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -22,4 +30,3 @@ var ChatSchema = new mongoose.Schema({
 });
 
 exports.Chat = mongoose.model('Chat', ChatSchema);
-
