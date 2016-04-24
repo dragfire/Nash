@@ -8,6 +8,10 @@ html, body {
     padding: 0;
 }
 
+#content > #msg.card-panel{
+    word-wrap: break-word;
+}
+
 .sidebar, .chat-wrapper {
     height: 100% !important;
 }
@@ -18,10 +22,12 @@ html, body {
 
 .msg-board.inv-board {
     height: 63%;
+    overflow: auto;
 }
 
 .msg-board.no-inv-board {
     height: 80%;
+    overflow: auto;
 }
 
 .msg-input {
@@ -59,8 +65,11 @@ div.wrapper {
 
     .msg-board {
         height: 400px;
-        overflow: scroll;
         margin-top: 10px;
+    }
+
+    .msg-board.inv-board, .msg-board.no-inv-board{
+        overflow: auto;
     }
 
     div.wrapper > .row {
