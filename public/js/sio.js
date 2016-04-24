@@ -63,7 +63,10 @@ $(function () {
 
     socket.on('message created', function (msg) {
         console.log('message created', msg);
-        $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
+        if(msg.username === $username.text())
+            $msgBoard.append("<div id='msg' class='card-panel'> <span class='teal-text accent-3 uname' style='font-weight: bold'>You [<span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span>]</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
+        else $msgBoard.append("<div id='msg' class='card-panel'> <span class='pink-text accent-4 uname' style='font-weight: bold'>" + msg.username + "</span> says: <h6 class='text' style='margin-left: 20px!important;'>" + msg.content + "</h6> </div>");
+
         mb.scrollTop = mb.scrollHeight;
     });
 
