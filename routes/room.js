@@ -10,7 +10,7 @@ router
         debug(req.body);
         var username = req.body.username;
         var privacy = req.body.roomprivacy;
-        var room = req.body.roomname.toLowerCase();
+        var room = req.body.roomname.toLowerCase().trim();
         var newRoom = new schemas.Room({
             name: room,
             privacy: privacy,

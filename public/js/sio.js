@@ -11,7 +11,7 @@ $(function () {
     var mb = document.querySelector('.msg-board');
     var $invite = $('#invite').val();
     var $privacy = $('#privacy').val();
-    var $room = $('#room').val();
+    var $room = $('#room').val().trim();
 
     $nowTyping.hide();
     console.log(socket);
