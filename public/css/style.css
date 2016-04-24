@@ -63,14 +63,14 @@ div.wrapper {
         height: auto !important;
     }
 
-    .msg-board {
-        height: 400px;
+    .msg-board.inv-board, .msg-board.no-inv-board{
+        height: 500px;
         margin-top: 10px;
     }
 
-    .msg-board.inv-board, .msg-board.no-inv-board{
-        overflow: auto;
-    }
+    /*.msg-board.inv-board, .msg-board.no-inv-board{*/
+        /*overflow: scroll;*/
+    /*}*/
 
     div.wrapper > .row {
         height: auto !important;
