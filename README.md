@@ -5,7 +5,7 @@
 Real Time Chat app using Nodejs, Express, MongoDb, Socket.io 
 
 Nash can be used as a standalone desktop app.<br/>
-It provides an API where developers can implement chat features using ***NASH CHAT API***.
+Nash Api has been shifted to a seperate repository <a href="https://github.com/dragfire/Nash-Api">Nash Chat Api</a>
 
 Working App: https://dnash.herokuapp.com
 
