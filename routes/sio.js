@@ -7,7 +7,6 @@ var schemas = require('../model/schemas');
 var sio = function (io) {
     var defaultRoom = 'general';
     var rooms = ["general", "angular", "socket.io", "express", "node", "mongo"];
-    
     io.on('connection', function (socket) {
         debug('new connection', socket.id, socket.rooms, socket.sockets);
         socket.emit('setup', {
