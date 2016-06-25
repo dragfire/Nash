@@ -1,4 +1,4 @@
-# Nash
+#  Hornet
 
 [![Build Status](https://travis-ci.org/dragfire/Nash.svg?branch=master)](https://travis-ci.org/dragfire/Nash)
 
