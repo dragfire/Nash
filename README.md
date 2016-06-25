@@ -4,22 +4,22 @@
 
 Real Time Chat app using Nodejs, Express, MongoDb, Socket.io 
 
-Nash can be used as a standalone desktop app.<br/>
-Nash Api has been shifted to a seperate repository <a href="https://github.com/dragfire/Nash-Api">Nash Chat Api</a>
+Hornet can be used as a standalone desktop app.<br/>
+Hornet Api has been shifted to a seperate repository <a href="https://github.com/dragfire/Chat-Api">Chat Api</a>
 
-Working App: https://dnash.herokuapp.com
+Working App: https://hornett.herokuapp.com
 
 **TODO:** Write API for Third Party Integration.
 <br/>
 <br/>
-![Nash Chat Interface](https://www.dropbox.com/s/yrl51ff9z64fqzm/star_wars_1.png?dl=1)
+![Hornet Chat Interface](https://www.dropbox.com/s/yrl51ff9z64fqzm/star_wars_1.png?dl=1)
 <br/>
-![Nash Chat Interface](https://www.dropbox.com/s/5i1cdyu7ssyyqe7/star_wars_2.png?dl=1)
+![Hornet Chat Interface](https://www.dropbox.com/s/5i1cdyu7ssyyqe7/star_wars_2.png?dl=1)
 <br/>
 <br/>
-![Nash Main Interface](https://www.dropbox.com/s/lmhy6c0fldaj555/nash_main_int.png?dl=1)
+![Hornet Main Interface](https://www.dropbox.com/s/lmhy6c0fldaj555/nash_main_int.png?dl=1)
 <br/>
-![Nash Main Interface](https://www.dropbox.com/s/p7z2vlshqqr296t/nash_create_room.png?dl=1)
+![Hornet Main Interface](https://www.dropbox.com/s/p7z2vlshqqr296t/nash_create_room.png?dl=1)
 
 
 *Optimized for Mobile devices.*
