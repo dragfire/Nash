@@ -32,7 +32,7 @@ server.listen(port, function () {
     if(app.get('env') == 'development'){
         db_uri = "mongodb://127.0.0.1:27017/nash";
     } else {
-        db_uri = 'mongodb://nash:nash@ds013991.mlab.com:13991/heroku_psd3gjnj'
+        db_uri = 'mongodb://hornet:hornet@ds031618.mlab.com:31618/heroku_t394939n'
     }
     mongoose.connect(db_uri);
 });
