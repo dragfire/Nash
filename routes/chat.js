@@ -21,7 +21,7 @@ router.get('/:privacy?/:room?', function (req, res) {
         // }
         res.render('chat', {title: 'Chat Room | APP', url: req.headers.host, room: room, username: uname, privacy: privacy, invitation: invitation});
     } else if (!uname && room && invitation) {
-        res.render('invites', {title: 'Nash Invitees| APP', room: room, privacy: privacy});
+        res.render('invites', {title: 'Hornet Invitees| APP', room: room, privacy: privacy});
     } else if(uname){
         res.render('chat', {title: 'Chat Room | APP', room: room, username: uname, privacy: undefined, invitation: undefined});
     }
