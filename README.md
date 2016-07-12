@@ -1,6 +1,6 @@
 #  Hornet
 
-[![Build Status](https://travis-ci.org/dragfire/Nash.svg?branch=master)](https://travis-ci.org/dragfire/Nash)
+[![Build Status](https://travis-ci.org/dragfire/hornet.svg?branch=master)](https://travis-ci.org/dragfire/hornet)
 
 Real Time Chat app using Nodejs, Express, MongoDb, Socket.io 
 
