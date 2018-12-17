@@ -1,25 +1,13 @@
 #  Hornet
 
+## An IRC(Internet Relay Chat) web application with features to create public/private channels, and join a channel via invitation link.
+
 [![Build Status](https://travis-ci.org/dragfire/hornet.svg?branch=master)](https://travis-ci.org/dragfire/hornet)
 
-Real Time Chat app using Nodejs, Express, MongoDb, Socket.io 
-
-Hornet can be used as a standalone desktop app.<br/>
-Hornet Api has been shifted to a seperate repository <a href="https://github.com/dragfire/Chat-Api">Chat Api</a>
+## Demo:  
+<img src="public/demo/hornet_demo.gif" width="800" height="440"/>
 
 Working App: https://hornett.herokuapp.com
-
-**TODO:** Write API for Third Party Integration.
-<br/>
-<br/>
-![Hornet Chat Interface](https://www.dropbox.com/s/yrl51ff9z64fqzm/star_wars_1.png?dl=1)
-<br/>
-![Hornet Chat Interface](https://www.dropbox.com/s/5i1cdyu7ssyyqe7/star_wars_2.png?dl=1)
-<br/>
-<br/>
-![Hornet Main Interface](https://www.dropbox.com/s/lmhy6c0fldaj555/nash_main_int.png?dl=1)
-<br/>
-![Hornet Main Interface](https://www.dropbox.com/s/p7z2vlshqqr296t/nash_create_room.png?dl=1)
 
 
 *Optimized for Mobile devices.*
