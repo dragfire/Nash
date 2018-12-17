@@ -1,7 +1,7 @@
 /**
  * Created by dragfire on 21-04-2016.
  */
-var debug = require('debug')('NASH: SIO');
+var debug = require('debug')('HORNET SIO');
 var schemas = require('../model/schemas');
 
 var sio = function (io) {

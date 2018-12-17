@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var schemas = require('../model/schemas');
-var debug = require('debug')('NASH: Chat');
+var debug = require('debug')('HORNET Chat');
 
 router.get('/:privacy?/:room?', function (req, res) {
     debug(req.query.username);

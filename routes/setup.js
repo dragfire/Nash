@@ -5,7 +5,7 @@
 var express = require('express');
 var router = express.Router();
 var schemas = require('../model/schemas');
-var debug = require('debug')('NASH: Setup');
+var debug = require('debug')('HORNET Setup');
 
 router.post('/', function (req, res) {
     var chats = [{

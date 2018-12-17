@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var schemas = require('../model/schemas');
-var debug = require('debug')('NASH: Room');
+var debug = require('debug')('HORNET Room');
 //var base = require('base64');
 
 router

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var schemas = require('../model/schemas');
-var debug = require('debug')('NASH: Message');
+var debug = require('debug')('HORNET Message');
 
 router.get('/', function (req, res) {
     schemas.Chat.find({
