@@ -1,6 +1,6 @@
 #  Hornet
 
-## An IRC(Internet Relay Chat) web application with features to create public/private channels, and join a channel via invitation link.
+An IRC(Internet Relay Chat) web application with features to create public/private channels, and join a channel via invitation link.
 
 [![Build Status](https://travis-ci.org/dragfire/hornet.svg?branch=master)](https://travis-ci.org/dragfire/hornet)
 
