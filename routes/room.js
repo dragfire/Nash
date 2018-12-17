@@ -29,7 +29,7 @@ router
         res.redirect('/chat/'+privacy+'/'+room+'?username='+username+'&invite=no');
     })
     .get(function (req, res) {
-        res.render('room', {title: 'Create Room | NASH'});
+        res.render('room', {title: 'Create Room | HORNET'});
     });
 
 module.exports = router;
